@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    background-color: #4d4d4d; /* Set the background color */
+    position: relative;
+    padding: 10px 0; /* Add vertical padding as needed */
+}
+
+.nav-container {
+    max-width: 800px; /* Set the maximum width for content container */
+    margin: 0 auto; /* Center the content container horizontally */
+    display: flex;
+    justify-content: space-between; /* Ensure space between content and edges */
+    align-items: center;
+    padding: 0 20px; /* Add horizontal padding for content */
+}
+
+.nav-container > .nav-header {
+    display: inline;
+}
+
+.nav-container > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px; /* Adjust padding as necessary */
+    margin-right: auto; /* Pushes other elements to the right */
+}
+
+.nav-container > .nav-btn {
+    display: none; /* Changed to inline-block */
+    position: relative; /* Adjusted position */
+    margin-left: 10px; /* Space between title and button */
+}
+
+.nav-container > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+}
+
+.nav-container > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+}
+
+.nav-container > .nav-links > a:hover {
+    color: #000; /* Change this color to your preference */
+}
+
+.nav-container > #nav-check {
+    display: none;
+}
+
+@media (max-width:600px) {
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* This will space out the title and the button */
+        height: 30px;
+        width: 100%;
+        background-color: #4d4d4d;
+    }
+    
+    .nav-container > .nav-header > .nav-title {
+        padding: 10px;
+        font-size: 22px;
+        color: #fff;
+        margin-left: 5px;
+    }
+    
+    .nav-container > .nav-btn {
+        display: inline-block;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    
+    .nav-container > .nav-btn > label {
+        padding: 10px;
+    }
+    
+    .nav-container > .nav-btn > label > .fas.fa-bars {
+        font-size: 24px;
+        color: #efefef;
+    }
+    
+    .nav-container > .nav-btn > label:hover > .fas.fa-bars {
+        color: #ccc;
+    }
+    
+    .nav-container > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #333;
+        height: auto;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+        padding: 0;
+    }
+    .nav-container > .nav-links > a {
+        display: block;
+        margin-left: 25px;
+        margin-top: 5px;
+        width: 100%;
+        text-align: left;
+    }
+    .nav-container > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+    }
+    .nav-container > #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}
