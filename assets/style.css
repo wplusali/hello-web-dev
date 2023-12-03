@@ -2,6 +2,7 @@
  body, ul {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Styling the main navigation bar */
@@ -73,23 +74,25 @@ nav ul ul li {
 @media screen and (max-width: 600px) {
     .nav-toggle {
         display: block;
-        position: absolute;
-        right: 0px; /* Adjust as needed */
+        position: relative;
+        left: 0px; /* Adjust as needed */
         top: 0px; /* Adjust as needed */
-        z-index: 2;
+
     }
 
     .nav-close {
         display: none;
         position: absolute;
-        right: 0px; /* Adjust as needed */
-        top: 0px; /* Adjust as needed */
+        left: 3px; /* Adjust as needed */
+        top: -1px; /* Adjust as needed */
     }
 
     nav ul {
         display: none;
         width: 100%;
         text-align: left;
+        width: 100%; /* Full width of the viewport */
+        height: 100vh; /* Full height of the viewport */
     }
 
     nav ul li {
@@ -99,11 +102,13 @@ nav ul ul li {
     nav ul ul {
         position: static;
         display: none; /* Ensure submenus are not displayed by default */
+        padding-left: 10px;
     }
 
     /* Remove display none for open submenu */
     .submenu-open {
         display: block !important;
+        height: auto;
     }
 
     nav ul li a:hover, nav ul ul li a:hover {
